@@ -8,7 +8,7 @@ var gulp=require('gulp'),
     pngquant=require('imagemin-pngquant');
 //注册网页打开任务
 gulp.task("webserver",function(){
-    gulp.src("./src")
+    gulp.src("./dist")
         .pipe(webserver({
             livereload:true,
             open:true

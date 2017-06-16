@@ -1,10 +1,8 @@
 {
   "name": "TCB",
   "version": "1.0.0",
-  "description": "",
   "main": "gulpfile.js",
   "dependencies": {
-    "gulp": "^3.9.1",
     "gulp-imagemin": "^3.3.0",
     "gulp-livereload": "^3.8.1",
     "gulp-rename": "^1.2.2",
@@ -13,11 +11,22 @@
     "gulp-webserver": "^0.9.1",
     "imagemin-pngquant": "^5.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/missy9313/test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/missy9313/test/issues"
+  },
+  "homepage": "https://github.com/missy9313/test#readme",
+  "description": ""
 }
