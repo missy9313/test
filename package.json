@@ -9,7 +9,8 @@
     "gulp-ruby-sass": "^2.1.1",
     "gulp-uglify": "^3.0.0",
     "gulp-webserver": "^0.9.1",
-    "imagemin-pngquant": "^5.0.1"
+    "imagemin-pngquant": "^5.0.1",
+    "gulp-htmlmin": "^3.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1"

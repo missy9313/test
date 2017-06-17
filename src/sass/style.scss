@@ -10,7 +10,6 @@ body{
   color: #666;
   text-decoration: none;
 }
-
 @mixin liStyle{
   color: #666;
   float:left;
@@ -19,6 +18,24 @@ body{
 @mixin flex{
   display: flex;
   justify-content: space-around;
+}
+@mixin ball{
+  width:13px;
+  height:13px;
+  border-radius: 50%;
+  border:none;
+  margin-right:1%;
+}
+@mixin contant{
+  width:90%;
+  margin:auto;
+  background-color: white;
+}
+@mixin search{
+  height:43px;
+  background-color: white;
+  border:1px solid #118855;
+  line-height: 43px;
 }
 ul{
   list-style: none;
@@ -59,10 +76,10 @@ nav{
   text-decoration: underline;
 }
 #banner{
-  background-color: white;
+  background-color:white;
   width:100%;
-  height:420px;
-  @include flex;
+  height:470px;
+  float: left;
 }
 #banner1{
   width: 100%;
@@ -70,21 +87,20 @@ nav{
   line-height: 55px;
   @include flex;
   margin-top: 20px;
+  float:left;
 }
 #logo{
   width:39%;
 }
-#banner img{
-  height:76px;
-}
-#banner ul{
+
+#bannerUl1{
   width:39%;
 }
-#banner ul li{
+#bannerUl1 li{
   @include liStyle;
   margin-right: 23px;
 }
-#banner ul li a{
+#bannerUl1 li a{
   @include aStyle;
   font-size: 17px;
 }
@@ -92,4 +108,222 @@ nav{
   position: absolute;
   top:8%;
   left:58%;
+}
+#banner2{
+  width:90%;
+  margin:110px auto;
+}
+#playImg img{
+  width:100%;
+  height:360px;
+}
+.carousel-indicators .active{
+  background-color: black;
+  @include ball;
+}
+.carousel-indicators{
+  position:absolute;
+  top:90%;
+  left:95%;
+}
+.carousel-indicators li{
+  background-color:rgba(255,255,255,0.7);
+  @include ball;
+}
+#menu{
+  position:absolute;
+  top:145px;
+  left:75px;
+  width:40%;
+  height:360px;
+}
+#menu li{
+  width:40%;
+  height:90px;
+  border-bottom: 1px solid #ccc;
+  background-color: rgba(0,0,0,0.7);
+  color: #fff;
+  line-height:90px;
+  font-size:18px;
+  padding-left:4%;
+  cursor: pointer;
+}
+#menu li span{
+  float: right;
+  margin-right: 10%;
+}
+#menu li img{
+  height:83px;
+  width:23%;
+  margin-right: 10%;
+}
+#contant1{
+ @include contant;
+  height:170px;
+  @include flex;
+}
+.c1{
+  border-right:1px solid #f7f7f7;
+  width:25%;
+}
+.word{
+  width:90%;
+  height:70px;
+  line-height: 70px;
+  color:#666;
+  margin:10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.contant2{
+  @include contant;
+  @include flex;
+}
+#service{
+  width:100%;
+  height:500px;
+  background-color: white;
+  padding-top:20px;
+}
+#search{
+  width:92%;
+  margin:auto;
+}
+.city{
+  width:142px;
+  @include search;
+  margin-right: 10px;
+}
+#text{
+  width:588px;
+  @include search;
+}
+#btn{
+  width:120px;
+  height:43px;
+  background-color:#118855;
+  text-align: center;
+  line-height:30px;
+  border:none;
+  font-size: 20px;
+  color:white;
+}
+#shopBox{
+  width:68%;
+  float: left;
+  margin-top:15px;
+  margin-left:75px;
+}
+#sort{
+  height:50px;
+  border:1px solid #d6d6d6;
+  background-color: #f7f7f7;
+}
+#sort ul{
+  float: left;
+}
+#sort div{
+  float: right;
+  margin:5px;
+  width:100px;
+  height:35px;
+  line-height: 35px;
+  text-align: center;
+  border:1px solid #d6d6d6;
+}
+#sortUl li{
+  float: left;
+  width:123px;
+  height:47px;
+  line-height:50px;
+  text-align: center;
+}
+#sortUl li a {
+  @include aStyle;
+}
+.shop{
+  width:76%;
+  height:136px;
+  display: flex;
+  margin-top:20px;
+  border-bottom: 1px solid #f7f7f7;
+}
+.shop img{
+  width:92px;
+  height:92px;
+  margin-right: 10px;
+}
+.info{
+  width:95%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.shop li p{
+  line-height:21px;
+  font-size: 17px;
+  color:#9d9d9d;
+}
+
+.shopLi{
+  margin-left:50px;
+}
+#haoping{
+  float:left;
+  margin-top:15px;
+  margin-left:65px;
+  width:271px;
+  height:400px;
+  border:1px solid #f7f7f7;
+}
+#bottomDiv{
+  width:80%;
+  height:150px;
+  margin:30px auto;
+  border-bottom: 1px solid #d6d6d6;
+}
+#bottom{
+  @include flex;
+  width:100%;
+}
+.bottomUl{
+ @include flex;
+}
+.bottomUl li{
+  margin-right:10px;
+  line-height: 25px;
+}
+.bottomUl li a{
+  @include aStyle;
+}
+#bottomWord{
+  width:50%;
+  margin:40px auto;
+  text-align: center;
+}
+#bottomWord p{
+  font-size: 12px;
+  color:#9d9d9d;
+}
+#bottomWord a{
+  text-decoration: none;
+  font-size: 12px;
+  color:#9d9d9d;
+}
+#bottomWord a:hover{
+   text-decoration: underline;
+ }
+#zixun{
+  position: fixed;
+  top:40%;
+  left:95%;
+}
+.go{
+  display: inline-block;
+  margin-left:3px;
+  width:0;
+  height:0;
+  border-top:5px solid #666;
+  border-left:4px solid transparent;
+  border-right:4px solid transparent;
 }

@@ -5,6 +5,7 @@ var gulp=require('gulp'),
     uglify=require('gulp-uglify'),
     rename=require('gulp-rename'),
     imagemin=require('gulp-imagemin'),
+    htmlmin=require('gulp-htmlmin'),
     pngquant=require('imagemin-pngquant');
 //注册网页打开任务
 gulp.task("webserver",function(){
@@ -15,10 +16,10 @@ gulp.task("webserver",function(){
         }));
 });
 //注册html任务
-  gulp.task("html",function(){
-      return gulp.src('src/**/*.html')
-          .pipe(gulp.dest('dist'));
-  });
+//   gulp.task("html",function(){
+//       return gulp.src('src/**/*.html')
+//           .pipe(gulp.dest('dist'));
+//   });
 //注册sass任务
  gulp.task("sass",function(){
      return sass('src/sass/*.scss',{style:"compact"})
@@ -29,7 +30,7 @@ gulp.task("webserver",function(){
  });
  //注册js压缩任务以及重命名任务
  gulp.task("script",function(){
-     return gulp.src("src/js/*.js")
+     return gulp.src("src/js/**/*.")
          .pipe(rename({suffix:'.min'}))
          .pipe(uglify({preserveComments:'some'}))
          .pipe(gulp.dest('dist/js'));
@@ -44,5 +45,14 @@ gulp.task("images",function(){
         }))
         .pipe(gulp.dest('dist/images'));
 });
+gulp.task("htmlmin", function () {
+    gulp.src('src/**/*.html')
+        .pipe(htmlmin())
+        .pipe(gulp.dest('dist'))
+});
+gulp.task('watch', function () {
+    gulp.watch('src/**/*.html',["htmlmin"]);
+    gulp.watch('src/sass/*.scss',["sass"]);
+});
 //默认任务
-gulp.task("default",["sass","script","images","html","webserver"]);
+gulp.task("default",["sass","script","images","webserver","watch"]);
