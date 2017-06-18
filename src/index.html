@@ -65,12 +65,17 @@
            </div>
        </div>
         <!--索引-->
+        <div  class="info">1</div>
+        <div  class="info">2</div>
+        <div  class="info">3</div>
+        <div  class="info">4</div>
          <ul id="menu">
-             <li><img src="images/icon1.png">修手机/Pad<span>></span></li>
-             <li><img src="images/icon2.png">修电脑<span>></span></li>
-             <li><img src="images/icon3.png">卖手机电脑<span>></span></li>
-             <li><img src="images/icon4.png">买二手机<span>></span></li>
+             <li class="menuLi"><img src="images/icon1.png">修手机/Pad<i class="seeMore"></i><span>></span></li>
+             <li class="menuLi"><img src="images/icon2.png">修电脑<i class="seeMore"></i><span>></span></li>
+             <li class="menuLi"><img src="images/icon3.png">卖手机电脑<i class="seeMore"></i><span>></span></li>
+             <li class="menuLi"><img src="images/icon4.png">买二手机<i class="seeMore"></i><span>></span></li>
          </ul>
+
    </div>
 </div>
 <!--主内容-->
@@ -130,10 +135,14 @@
         <!--按需搜索-->
             <div id="sort">
                 <ul id="sortUl">
-                    <li style="background-color: white;border-left:1px solid #d6d6d6;border-right:1px solid #d6d6d6;"><a href="#" style="color:#118855">默认排序</a></li>
-                    <li><a href="#">按成交量</a></li>
-                    <li><a href="#">按人气</a></li>
-                    <li><input type="checkbox">先行赔付</li>
+                    <li class="sortLi" style="color:#118855;background-color: white;border-left:1px solid #d6d6d6;border-right:1px solid #d6d6d6;">
+                        <!--<a href="" style="color:#118855">-->
+                            默认排序
+                        <!--</a>-->
+                    </li>
+                    <li class="sortLi">按成交量</li>
+                    <li class="sortLi">按人气</li>
+                    <li class="sortLi"><input type="checkbox">先行赔付</li>
                 </ul>
                 <div>地图模式</div>
             </div>
@@ -141,7 +150,7 @@
         <ul class="shop">
                <li> <img src="images/4.jpg"></li>
                 <li >
-                    <p><span>北京鸿翔科技</span>店铺等级：</p>
+                    <p><span style="color:#118855;margin-left:10px">北京鸿翔科技</span>店铺等级：</p>
                     <p class="info">主营：台式机，笔记本芯片级维修，数据恢复、监控安装</p>
                     <p>地址：北京海淀区西三旗旗胜家园1号楼底商103号</p>
                 </li>
@@ -150,6 +159,9 @@
                     <p>同城帮认证</p>
                     <p>人气：27216次浏览</p>
                 </li>
+               <li>
+                   <div class="in">进入店铺</div>
+               </li>
         </ul>
         </div>
         <!--好评榜-->
@@ -216,11 +228,46 @@
 </div>
 </body>
 <script>
-    $(function(){
-        $("#bannerUl1").find("li").on("mouseover",function(){
-            $(this).css("background","#f7f7f7");
-            
-        })
+    $(function() {
+        $("#bannerUl1").find("li").on("mouseover", function (e) {
+            $(this).css("background", "#f7f7f7");
+
+        }).on("mouseout", function () {
+            $(this).css("background", "white");
+        });
+        $(".seeMore").hide();
+//      banner区域页面显示
+        $(".menuLi").on("mouseover", function (e) {
+            var num = $(this).index();
+            $(this).css("background", "#118855");
+            $(this).find("i").show();
+            $(".info").eq(num).show();
+
+        }).on("mouseout", function () {
+            var nums = $(this).index();
+            $(this).css("background", "rgba(0,0,0,0.7)");
+            $(this).find("i").hide();
+            $(".info").eq(nums).hide();
+        });
+//        店铺搜索区域
+        $(".sortLi").on("click", function (e) {
+            var a = $(this).index();
+            $(".sortLi").eq(a).css({
+                borderLeft: "1px solid #d6d6d6",
+                borderRight: "1px solid #d6d6d6",
+                background: "white",
+                color:"#118855"
+            });
+        });
+//        具体店铺
+        $(".shop").on("mouseover", function (e) {
+            $(this).css("background", "#f7f7f7");
+            $(this).find("div").show();
+        }).on("mouseout", function () {
+            $(this).css("background", "white");
+            $(this).find("div").hide();
+
+        });
     })
 </script>
 </html>
