@@ -94,7 +94,7 @@ nav{
 }
 
 #bannerUl1{
-  width:39%;
+  width:40%;
 }
 #bannerUl1 li{
   @include liStyle;
@@ -107,7 +107,7 @@ nav{
 #hot{
   position: absolute;
   top:8%;
-  left:58%;
+  left:57%;
 }
 #banner2{
   width:90%;
@@ -216,11 +216,12 @@ nav{
 }
 #sort{
   height:50px;
+  width:100%;
   border:1px solid #d6d6d6;
   background-color: #f7f7f7;
 }
 #sort ul{
-  float: left;
+  float: left
 }
 #sort div{
   float: right;
@@ -266,7 +267,7 @@ nav{
   color:#9d9d9d;
 }
 .shopLi{
-  margin-left:130px;
+  margin-left:100px;
   margin-right: 100px;
 }
 .in{
@@ -314,12 +315,12 @@ nav{
   text-align: center;
 }
 #bottomWord p{
-  font-size: 12px;
+  font-size: 11px;
   color:#9d9d9d;
 }
 #bottomWord a{
   text-decoration: none;
-  font-size: 12px;
+  font-size: 11px;
   color:#9d9d9d;
 }
 #bottomWord a:hover{

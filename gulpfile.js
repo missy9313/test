@@ -11,15 +11,15 @@ var gulp=require('gulp'),
 gulp.task("webserver",function(){
     gulp.src("./dist")
         .pipe(webserver({
-            livereload:true,
-            open:true
+            livereload:true
+            // open:true
         }));
 });
 //注册html任务
-//   gulp.task("html",function(){
-//       return gulp.src('src/**/*.html')
-//           .pipe(gulp.dest('dist'));
-//   });
+  gulp.task("html",function(){
+      return gulp.src('src/**/*.html')
+          .pipe(gulp.dest('dist'));
+  });
 //注册sass任务
  gulp.task("sass",function(){
      return sass('src/sass/*.scss',{style:"compact"})
@@ -55,4 +55,4 @@ gulp.task('watch', function () {
     gulp.watch('src/sass/*.scss',["sass"]);
 });
 //默认任务
-gulp.task("default",["sass","script","images","webserver","watch"]);
+gulp.task("default",["sass","script","images","html","webserver","watch"]);
